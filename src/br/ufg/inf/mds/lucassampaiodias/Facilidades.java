@@ -62,6 +62,33 @@ public class Facilidades {
                 return false;
         return true;
     }
+    
+    public static int[][] ordenarMatriz(int[][] matriz, 
+            int linhas, int colunas){
+        for(int i = 0; i < linhas; i++){
+            for(int j = 0; j < colunas; j++){
+                for(int x = 0; x < linhas; x++){
+                    for(int y = 0; y < colunas; y++){
+                        if(matriz[i][j] < matriz[x][y]){
+                            int t = matriz[i][j];
+                            matriz[i][j] = matriz[x][y];
+                            matriz[x][y] = t;
+                        }
+                    }
+                }
+            }   
+        }
+        return matriz;
+    }
+    
+    public static boolean existeValorNoVetor(int valor, int[] vetor){
+        for (int i = 0; i < vetor.length; i++){
+            if (vetor[i] == valor){
+                return true;
+            }
+        }
+        return false;
+    }
 }
 
 
